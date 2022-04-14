@@ -13,7 +13,8 @@ Go to this link and select Turn On
 https://www.google.com/settings/security/lesssecureapps
 ### you must do this step or you will get SMTPAuthenticationError when sending mail read this :
 https://stackoverflow.com/questions/26852128/smtpauthenticationerror-when-sending-mail-using-gmail-and-python
-### The Script Is Codded For Gmail Accounts And Not Tasted Yet At Another Accounts like yandex , yahoo ....  
+### This Script Is Codded For Gmail Accounts And Not Tasted Yet At Another Accounts like yandex , yahoo ....  
+### This Script is under development and you may face alot of issues 
 
 
 
