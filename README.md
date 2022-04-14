@@ -17,18 +17,10 @@ https://stackoverflow.com/questions/26852128/smtpauthenticationerror-when-sendin
 ### This Script is under development and you may face alot of issues 
 
 
-
-## Requirements
-- smtp library 
-```
-python3 pip install smtplib
-```
-- pyfiglet library
-```
-python3 pip pyfiglet
-```
 ## Usage 
-
+```
+python3 pip install -r requirements.txt
+```
 ```
 python3 Port2Email
 ```
