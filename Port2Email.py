@@ -3,33 +3,33 @@ import pyfiglet
 import time
 from EmailSender import *
 from getpass import getpass
+from colorama import Fore
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-q',
+                    '--quite',
+                    help="Quite mode (banner cancelled)",
+                    action='store_true')
 
-# Now only at the closed most common ports
+args = parser.parse_args()
 
-n = 20
+#banner
+if args.quite != True:
+    print(Fore.RED + pyfiglet.figlet_format('Port2Email'))
+    print("""programmed by : islam.h7""")
 
-
-
-print(pyfiglet.figlet_format('Port2Email'))
-
-print("""programmed by : islam.h7""")
+print(Fore.WHITE)
 
 # s for sender , r for receiver , p for password
-s = input("write your Sender Email  (the email you will send from) : ".title()).replace(" ","")
-r = input("write your receiver Email  (the email you will receive the email at) : ".title()).replace(" ","")
-p =  getpass("write your Sender Email password : ".title()).replace(" ","")
+s = input("write your Sender Email  (the email you will send from) : ".title()
+          ).replace(" ", "")
+r = input(
+    "write your receiver Email  (the email you will receive the email at) : ".
+    title()).replace(" ", "")
+p = getpass("write your Sender Email password : ".title()).replace(" ", "")
 
 userinfo(s, r, p)
-
-
-
-
-
-
-
-
-
 
 print("""Choose what type of scanning you would like to use:
 
@@ -37,9 +37,14 @@ print("""Choose what type of scanning you would like to use:
 2 - most common ports
 3 - all ports
 4 - help
-5 - contact with me  """.title())
+5 - contact with me  
+6 - Exit""".title())
 
 answer = input('write here : '.title())
+
+while answer == '' or answer not in ['1', '2', '3', '4', '5', '6']:
+    print("Wrong input , please type again")
+    answer = input('write here : '.title())
 
 
 def all_ports():
@@ -56,10 +61,10 @@ def all_ports():
                 print(
                     f'port {port} is open !!!!!!!! ,  and service is {service}'
                 )
-                send(port , target , "o")
+                send(port, target, "o")
             else:
                 print(f'port {port} is closed !!!! and service is {service}')
-                send(port , target , "c")
+                send(port, target, "c")
             s.close()
         except:
             pass
@@ -77,12 +82,12 @@ def typed_port():
         if r == 0:
             service = socket.getservbyport(port)
             print(f'{port} is open !!!!!!!! ,  and service is {service}')
-            send(port , target , "o")
+            send(port, target, "o")
         else:
             service = socket.getservbyport(port)
             print(f'{port} is closed !!!! and service is {service}')
             s.close()
-            send(port , target , "c")
+            send(port, target, "c")
     except:
         print('this port is not found in our system'.title())
         typed_port()
@@ -99,13 +104,13 @@ def most_common_ports():
         if r == 0:
             service = socket.getservbyport(port)
             print(f'{port} is open !!!!!!!! ,  and service is {service}')
-            send(port , target , "o") 
-        
+            send(port, target, "o")
+
         else:
             service = socket.getservbyport(port)
             print(f'{port} is closed !!!! and service is {service}')
-            send(port , target , "c") 
-            
+            send(port, target, "c")
+
             s.close()
 
 
@@ -127,4 +132,8 @@ if answer == '4':
 if answer == '5':
     print(""" Gmail : islmhmdymhmed@gmail.com
     this is the only way you can contact with me :) 
-    please read the ReadMe.txt file to know more about this program and ensure it is working correctly :)""")
+    please read the ReadMe.txt file to know more about this program and ensure it is working correctly :)"""
+          )
+
+if answer == "6":
+    sys.exit()

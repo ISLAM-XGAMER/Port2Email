@@ -1,2 +1,5 @@
 smtplib
 pyfiglet
+colorama
+socket
+email.message
