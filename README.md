@@ -1,8 +1,8 @@
 # Port2Email
 Python script that checks the open ports in the network and send an Email to your Email box
 #### Coming Features
-- [ ] quite mode
-- [ ] The Error Handling Codes 
+- [x] quite mode
+- [x] The Error Handling Codes 
 - [ ] Stored EmailSender
 - [ ] Change The Email content feature
 - [ ] fixing some issues
