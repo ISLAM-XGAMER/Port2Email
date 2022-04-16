@@ -6,6 +6,7 @@ Python script that checks the open ports in the network and send an Email to you
 - [ ] Stored EmailSender
 - [ ] Change The Email content feature
 - [ ] fixing some issues
+- [ ] Ability to change the request timeout 
  
 ## Important Note !!
 ### This step for the Sender Email you will use ,  Google blocks sign-in attempts from apps which do not use modern security standards (mentioned on their support page). You can however, turn on/off this safety feature In The Sender Email Settings by going to the link below:
